@@ -1,6 +1,6 @@
 ---
 title: "Introduction to R Programming"
-author: "Sana Rasheed"
+author: "Abdul Majid"
 date: "May 14, 2020"
 output: html_document
 ---
@@ -53,6 +53,9 @@ matrix_3x3
 
 
 ```{r }
+
+dimnames(matrix_3x3) <- list(c('a', 'b', 'c'), c('x', 'y', 'z'))
+matrix_3x3
 
 ```
 
