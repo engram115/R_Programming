@@ -29,7 +29,7 @@ name
 ```
 
 ```{r }
-name_concat = paste(name, collapse='')
+name_concat <- paste(name, collapse='')
 name_concat
 
 ```
@@ -69,16 +69,23 @@ matrix_3x3
 
 
 ```{r }
-#### Start solution ####
+
+q1 <- c('Employed', 'Unemployed', 'Employed', 'Unemployed', 'Self-Employed', 'Employed', 'Unemployed', 'Self-Employed', 'Self-Employed', 'Employed', 'Unemployed', 'Self-Employed')
+
+q1_factor <- factor(q1, levels=c('Employed', 'Unemployed', 'Self-Employed')) 
+q1_factor
 ```
 
 
 ```{r }
-
+q2_table = table(q1_factor)
+q2_table
 ```
 
 
 ```{r }
+q3_unclass = unclass(q1_factor)
+q3_unclass
 
 ```
 
