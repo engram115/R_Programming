@@ -121,22 +121,31 @@ q3_unclass
 
 
 ```{r }
-
+CustomerID=1:5
+bank_customers <- data.frame(CustomerID, CustomerName=NA, hasAccount=NA, totalBalance=NA)
+bank_customers
 ```
 
 
 ```{r }
 
+CustomerName <- c('Alicia', 'Nancy', 'Fernando', 'Louis', 'Diane')
+hasAccount <- c('F', 'T', 'T', 'T', 'F')
+totalBalance <- c(NA, 10000, 100, 0, NA)
+bank_customers <- data.frame(CustomerID, CustomerName, hasAccount, totalBalance)
+bank_customers
 ```
 
 
 ```{r }
 
+nrow(bank_customers)
+ncol(bank_customers)
 ```
 
 
 ```{r }
-
+names(bank_customers)
 ```
 
 
