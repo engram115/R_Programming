@@ -24,20 +24,30 @@ output: html_document
 
 ```{r }
 #### Start solution ####
+name <- c('a', 'b', 'd', 'u', 'l')
+name
+```
+
+```{r }
+name_concat = paste(name, collapse='')
+name_concat
+
 ```
 
 
 ```{r }
 
-```
-
-
-```{r }
+var_100to200 <- 100:200
+var_100to200
 
 ```
 
 
 ```{r }
+
+mat_values = seq(2,18, by=2)
+matrix_3x3 = matrix(mat_values, nrow=3, ncol=3)
+matrix_3x3
 
 ```
 
