@@ -412,29 +412,25 @@ print(det(my_mat))
 
 ```{r }
 
-```
+curr_date <- Sys.Date()
+curr_time <- Sys.time()
 
-
-```{r }
-
-```
-
-
-```{r }
+d <- as.POSIXlt(curr_date)
+print(paste("Date: ", d))
+t <- as.POSIXlt(curr_time)
+print(paste("Time: ", t))
 
 ```
 
 
 ```{r }
 
+names(unclass(t))
+print(paste("Weekday = ", t$wday,
+            "; Year = ", t$year,
+            "; Second = ", t$sec,
+            "; Hour = ", t$hour))
 ```
-
-
-```{r }
-
-```
-
-
 ```{r }
 #### End solution ####
 ```
@@ -451,6 +447,12 @@ print(det(my_mat))
 
 
 ```{r }
+da = format(Sys.time(), "%H:%M:%S")
+timeP <- strptime(da, format="%H:%M:%S", tz="Asia/Karachi")
+timeP
+da1 = format(Sys.time(), "%H:%M:%S")
+timeG <- strptime(da, format="%H:%M:%S", tz="GMT")
+timeG
 
 ```
 
