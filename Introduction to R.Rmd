@@ -371,29 +371,26 @@ print(returned_value)
 
 ```{r }
 
-```
+matrix_1 = matrix(4:9, 2, 3)
+matrix_2 = matrix(rep(2, 6), 3, 2)
 
+print("Element wise multiplication: ")
+print(matrix_1*t(matrix_2))
 
-```{r }
-
-```
-
-
-```{r }
-
-```
-
-
-```{r }
+print("Matrix multiplication: ")
+print(matrix_1 %*% matrix_2)
 
 ```
 
 
 ```{r }
 
+my_mat = matrix(8:11, nrow=2, ncol=2)
+my_mat
+print("Determinant of the matrix is: ")
+print(det(my_mat))
+
 ```
-
-
 ```{r }
 #### End solution ####
 ```
