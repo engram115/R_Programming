@@ -453,7 +453,6 @@ timeP
 da1 = format(Sys.time(), "%H:%M:%S")
 timeG <- strptime(da, format="%H:%M:%S", tz="GMT")
 timeG
-
 ```
 
 
@@ -498,6 +497,38 @@ timeG
 
 ```{r }
 
+f_mean_sd <- function(val)
+{
+  numbers_list <- as.list(val)
+  
+  lapp_mean <- lapply(numbers_list, mean)
+  lapp_sd <- lapply(numbers_list, sd)
+  
+  sapp_mean <- sapply(numbers_list, mean)
+  sapp_sd <- sapply(numbers_list, sd)
+  
+  numbers_matrix <- matrix(rnorm(50), 20, 10)
+  app_mean_row <- apply(numbers_matrix, 1, mean)
+  app_mean_col <- apply(numbers_matrix, 2, mean)
+  
+  app_sd_row <- apply(numbers_matrix, 1, sd)
+  app_sd_col <- apply(numbers_matrix, 2, sd)
+  
+  r <- paste( "Mean using Lapply: ", lapp_mean,
+                "; SD using Lapply: ", lapp_sd,
+                "; Mean using Sapply: ", sapp_mean,
+                "; SD using Sapply: ", sapp_sd,
+                "; Mean using Apply at row: ", app_mean_row,
+                "; Mean using Apply at column: ", app_mean_col,
+                "; SD using Apply at row: ", app_sd_row,
+                "; SD using Apply at column: ", app_sd_col)
+  return(r)
+  
+}
+
+numbers <- c(100:150)
+result = f_mean_sd(numbers)
+print(result)
 ```
 
 
@@ -537,6 +568,12 @@ timeG
 
 
 ```{r }
+
+numbers_matrix <- matrix(rnorm(16), 4, 4)
+app_mean_row <- apply(numbers_matrix, 1, mean)
+app_mean_col <- apply(numbers_matrix, 2, mean)
+print(app_mean_row)
+print(app_mean_col)
 
 ```
 
