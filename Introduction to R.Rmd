@@ -514,14 +514,14 @@ f_mean_sd <- function(val)
   app_sd_row <- apply(numbers_matrix, 1, sd)
   app_sd_col <- apply(numbers_matrix, 2, sd)
   
-  r <- paste( "Mean using Lapply: ", lapp_mean,
-                "; SD using Lapply: ", lapp_sd,
-                "; Mean using Sapply: ", sapp_mean,
-                "; SD using Sapply: ", sapp_sd,
-                "; Mean using Apply at row: ", app_mean_row,
-                "; Mean using Apply at column: ", app_mean_col,
-                "; SD using Apply at row: ", app_sd_row,
-                "; SD using Apply at column: ", app_sd_col)
+  r <- paste( lapp_mean,
+                ";", lapp_sd,
+                ";", sapp_mean,
+                ";", sapp_sd,
+                ";", app_mean_row,
+                ";", app_mean_col,
+                ";", app_sd_row,
+                ";", app_sd_col)
   return(r)
   
 }
@@ -533,25 +533,11 @@ print(result)
 
 
 ```{r }
-
+xt <- c(126:150)
+ft <- gl(5, 5)
+print(tapply(xt, ft, mean))
+print(paste(length(xt), length(ft)))
 ```
-
-
-```{r }
-
-```
-
-
-```{r }
-
-```
-
-
-```{r }
-
-```
-
-
 ```{r }
 #### End solution ####
 ```
