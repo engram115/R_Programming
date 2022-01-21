@@ -447,34 +447,16 @@ print(paste("Weekday = ", t$wday,
 
 
 ```{r }
-da = format(Sys.time(), "%H:%M:%S")
-timeP <- strptime(da, format="%H:%M:%S", tz="Asia/Karachi")
-timeP
-da1 = format(Sys.time(), "%H:%M:%S")
-timeG <- strptime(da, format="%H:%M:%S", tz="GMT")
-timeG
-```
+#t <- format(Sys.time(), "%H:%M:%S")
 
-
-```{r }
+t1 <- Sys.time()
+#format(as.POSIXlt(t1, tz='GMT'), "%H:%M:%S")
+curr_GMT <- as.POSIXct(t1, tz='GMT')
+#print(format(curr_GMT, "%H:%M:%S"))
+my_time <- as.POSIXct(t1)
+print(my_time-curr_GMT)
 
 ```
-
-
-```{r }
-
-```
-
-
-```{r }
-
-```
-
-
-```{r }
-
-```
-
 
 ```{r }
 #### End solution ####
@@ -562,28 +544,6 @@ print(app_mean_row)
 print(app_mean_col)
 
 ```
-
-
-```{r }
-
-```
-
-
-```{r }
-
-```
-
-
-```{r }
-
-```
-
-
-```{r }
-
-```
-
-
 ```{r }
 #### End solution ####
 ```
@@ -618,30 +578,30 @@ head(Orange)
 
 
 ```{r }
-
+circum <- Orange$circumference
+split_data <- split(Orange, circum)
+print(split_data)
 ```
 
 
 ```{r }
-
+circum_30 <- split_data$'30'
+circum_75 <- split_data$'75'
+print("Circumference 30: ")
+print(circum_30)
+print("Circumference 75: ")
+print(circum_75)
 ```
 
 
 ```{r }
+circum_214 <- split_data$'214'
+average_age_30 <- apply(as.matrix(circum_30$'age'),2, mean)
+average_age_214 <- apply(as.matrix(circum_214$'age'), 2, mean)
 
+print(average_age_30)
+print(average_age_214)
 ```
-
-
-```{r }
-
-```
-
-
-```{r }
-
-```
-
-
 ```{r }
 #### End solution ####
 ```
